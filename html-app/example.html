@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artisan Marketplace - Connecting Craftsmanship with Community</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 50px;
+            animation: fadeInDown 0.8s ease;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .breadcrumb {
+            background: rgba(255,255,255,0.2);
+            padding: 15px 25px;
+            border-radius: 50px;
+            margin-bottom: 30px;
+            color: white;
+            font-size: 0.95em;
+            backdrop-filter: blur(10px);
+            display: inline-block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .breadcrumb span {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .breadcrumb span:hover {
+            text-decoration: underline;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: all 0.4s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .card:hover .card-image {
+            transform: scale(1.05);
+        }
+
+        .card-content {
+            padding: 25px;
+        }
+
+        .card-title {
+            font-size: 1.8em;
+            color: #333;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .card-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+
+        .price {
+            font-size: 1.5em;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .location {
+            color: #888;
+            font-size: 0.9em;
+        }
+
+        .location::before {
+            content: "📍 ";
+        }
+
+        .back-button {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: 2px solid white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            margin-bottom: 30px;
+        }
+
+        .back-button:hover {
+            background: white;
+            color: #667eea;
+            transform: translateX(-5px);
+        }
+
+        .item-count {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.9em;
+            backdrop-filter: blur(10px);
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .artisan-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .design-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .design-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .design-card:hover {
+            transform: scale(1.05);
+        }
+
+        .design-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .design-info {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .design-name {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .design-price {
+            color: #667eea;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .artisan-bio {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .artisan-bio h2 {
+            margin-bottom: 15px;
+            font-size: 2em;
+        }
+
+        .artisan-bio p {
+            line-height: 1.8;
+            opacity: 0.95;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Artisan Marketplace</h1>
+            <p>Discover authentic handcrafted treasures from skilled artisans</p>
+        </header>
+
+        <div id="breadcrumb"></div>
+        <div id="content"></div>
+    </div>
+
+    <script>
+        const data = {
+            categories: [
+                {
+                    id: 'pottery',
+                    name: 'Pottery',
+                    description: 'Timeless clay creations shaped by skilled hands, bringing earthy elegance to your space',
+                    image: 'https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=800&h=600&fit=crop',
+                    items: [
+                        { id: 'pots', name: 'Pots', description: 'Handcrafted clay pots for plants and storage' },
+                        { id: 'decoration', name: 'Decoration Items', description: 'Artistic pottery pieces for home decor' },
+                        { id: 'utensils', name: 'Kitchen Utensils', description: 'Traditional clay cookware and serving dishes' },
+                        { id: 'toys', name: 'Toys', description: 'Charming pottery toys for children' }
+                    ]
+                },
+                {
+                    id: 'fishing',
+                    name: 'Fishing',
+                    description: 'Traditional fishing equipment crafted with generations of maritime wisdom',
+                    image: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&h=600&fit=crop',
+                    items: [
+                        { id: 'nets', name: 'Fishnets', description: 'Hand-woven nets for coastal fishing' },
+                        { id: 'boats', name: 'Boats', description: 'Traditional wooden fishing boats' },
+                        { id: 'equipment', name: 'Fishing Equipment', description: 'Spears, hooks, and other fishing tools' }
+                    ]
+                },
+                {
+                    id: 'handicrafts',
+                    name: 'Handicrafts',
+                    description: 'Exquisite handmade crafts celebrating cultural heritage and artistic expression',
+                    image: 'https://images.unsplash.com/photo-1452860606245-08befc0ff44b?w=800&h=600&fit=crop',
+                    items: [
+                        { id: 'toys', name: 'Toys', description: 'Handcrafted toys from natural materials' },
+                        { id: 'wooden-toys', name: 'Wooden Toys', description: 'Artisan-carved wooden playthings' },
+                        { id: 'saris', name: 'Saris', description: 'Traditional hand-woven saris' },
+                        { id: 'slippers', name: 'Slippers', description: 'Comfortable handmade footwear' }
+                    ]
+                }
+            ],
+            artisans: {
+                'pottery-pots': [
+                    {
+                        id: 1,
+                        name: 'Ramesh Kumar',
+                        location: 'Jaipur, Rajasthan',
+                        bio: 'Third-generation potter specializing in traditional Rajasthani terracotta techniques. Ramesh learned the craft from his grandfather and continues to preserve ancient pottery methods.',
+                        price: '₹500 - ₹2,000',
+                        designs: [
+                            { name: 'Traditional Clay Pot', price: '₹800', image: 'https://images.unsplash.com/photo-1610701596007-11502861dcfa?w=400&h=400&fit=crop' },
+                            { name: 'Decorative Planter', price: '₹1,200', image: 'https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=400&h=400&fit=crop' }
+                        ]
+                    },
+                    {
+                        id: 2,
+                        name: 'Lakshmi Devi',
+                        location: 'Pondicherry, Tamil Nadu',
+                        bio: 'Award-winning ceramicist known for her innovative designs that blend traditional South Indian pottery with contemporary aesthetics.',
+                        price: '₹600 - ₹2,500',
+                        designs: [
+                            { name: 'Modern Ceramic Pot', price: '₹1,500', image: 'https://images.unsplash.com/photo-1610701596061-2ecf227e85b2?w=400&h=400&fit=crop' },
+                            { name: 'Artistic Vase', price: '₹2,000', image: 'https://images.unsplash.com/photo-1578500351865-d0b2c5e5e0e2?w=400&h=400&fit=crop' }
+                        ]
+                    }
+                ],
+                'pottery-decoration': [
+                    {
+                        id: 3,
+                        name: 'Suresh Patel',
+                        location: 'Kutch, Gujarat',
+                        bio: 'Master craftsman creating stunning decorative pieces inspired by the vibrant culture of Kutch. His work features intricate patterns and bold colors.',
+                        price: '₹800 - ₹3,000',
+                        designs: [
+                            { name: 'Wall Hanging Art', price: '₹1,800', image: 'https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=400&h=400&fit=crop' },
+                            { name: 'Terracotta Figurine', price: '₹2,200', image: 'https://images.unsplash.com/photo-1582735689369-4fe89db7114c?w=400&h=400&fit=crop' }
+                        ]
+                    }
+                ],
+                'fishing-nets': [
+                    {
+                        id: 4,
+                        name: 'Govind Naik',
+                        location: 'Goa',
+                        bio: 'Fourth-generation fisherman and net weaver from a coastal village in Goa. Govind creates durable nets using traditional knotting techniques passed down through his family.',
+                        price: '₹2,000 - ₹8,000',
+                        designs: [
+                            { name: 'Cast Net', price: '₹3,500', image: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&h=400&fit=crop' },
+                            { name: 'Gill Net', price: '₹6,000', image: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&h=400&fit=crop' }
+                        ]
+                    }
+                ],
+                'handicrafts-saris': [
+                    {
+                        id: 5,
+                        name: 'Meera Sharma',
+                        location: 'Varanasi, Uttar Pradesh',
+                        bio: 'Expert weaver specializing in Banarasi silk saris. Meera has been weaving for over 20 years and her intricate designs are celebrated across India.',
+                        price: '₹5,000 - ₹25,000',
+                        designs: [
+                            { name: 'Banarasi Silk Sari', price: '₹15,000', image: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=400&h=400&fit=crop' },
+                            { name: 'Traditional Wedding Sari', price: '₹22,000', image: 'https://images.unsplash.com/photo-1583391733956-6c78276477e5?w=400&h=400&fit=crop' }
+                        ]
+                    }
+                ]
+            }
+        };
+
+        let currentView = 'categories';
+        let selectedCategory = null;
+        let selectedItem = null;
+        let selectedArtisan = null;
+
+        function render() {
+            const breadcrumb = document.getElementById('breadcrumb');
+            const content = document.getElementById('content');
+
+            // Render breadcrumb
+            let breadcrumbHTML = '<div class="breadcrumb">';
+            breadcrumbHTML += '<span onclick="showCategories()">Home</span>';
+            if (selectedCategory) {
+                breadcrumbHTML += ` > <span onclick="showItems('${selectedCategory.id}')">${selectedCategory.name}</span>`;
+            }
+            if (selectedItem) {
+                breadcrumbHTML += ` > <span onclick="showArtisans('${selectedCategory.id}', '${selectedItem.id}')">${selectedItem.name}</span>`;
+            }
+            if (selectedArtisan) {
+                breadcrumbHTML += ` > ${selectedArtisan.name}`;
+            }
+            breadcrumbHTML += '</div>';
+            breadcrumb.innerHTML = breadcrumbHTML;
+
+            // Render content based on current view
+            if (currentView === 'categories') {
+                content.innerHTML = renderCategories();
+            } else if (currentView === 'items') {
+                content.innerHTML = renderItems();
+            } else if (currentView === 'artisans') {
+                content.innerHTML = renderArtisans();
+            } else if (currentView === 'designs') {
+                content.innerHTML = renderDesigns();
+            }
+        }
+
+        function renderCategories() {
+            let html = '<div class="grid">';
+            data.categories.forEach(cat => {
+                html += `
+                    <div class="card" onclick="showItems('${cat.id}')">
+                        <img src="${cat.image}" alt="${cat.name}" class="card-image">
+                        <div class="card-content">
+                            <h2 class="card-title">${cat.name}</h2>
+                            <p class="card-description">${cat.description}</p>
+                        </div>
+                    </div>
+                `;
+            });
+            html += '</div>';
+            return html;
+        }
+
+        function renderItems() {
+            let html = '<button class="back-button" onclick="showCategories()">← Back to Categories</button>';
+            html += `<div class="item-count">${selectedCategory.items.length} items available</div>`;
+            html += '<div class="grid">';
+            selectedCategory.items.forEach(item => {
+                html += `
+                    <div class="card" onclick="showArtisans('${selectedCategory.id}', '${item.id}')">
+                        <img src="${selectedCategory.image}" alt="${item.name}" class="card-image">
+                        <div class="card-content">
+                            <h2 class="card-title">${item.name}</h2>
+                            <p class="card-description">${item.description}</p>
+                        </div>
+                    </div>
+                `;
+            });
+            html += '</div>';
+            return html;
+        }
+
+        function renderArtisans() {
+            const key = `${selectedCategory.id}-${selectedItem.id}`;
+            const artisans = data.artisans[key] || [];
+            
+            let html = '<button class="back-button" onclick="showItems(\'' + selectedCategory.id + '\')">← Back to Items</button>';
+            
+            if (artisans.length === 0) {
+                html += '<div class="item-count">No artisans available for this item yet. Check back soon!</div>';
+                return html;
+            }
+            
+            html += `<div class="item-count">${artisans.length} skilled artisans available</div>`;
+            html += '<div class="grid">';
+            artisans.forEach(artisan => {
+                html += `
+                    <div class="card" onclick="showDesigns(${artisan.id})">
+                        <div class="artisan-badge">Artisan</div>
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&h=600&fit=crop" alt="${artisan.name}" class="card-image">
+                        <div class="card-content">
+                            <h2 class="card-title">${artisan.name}</h2>
+                            <p class="card-description">${artisan.bio}</p>
+                            <div class="card-meta">
+                                <span class="location">${artisan.location}</span>
+                                <span class="price">${artisan.price}</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+            html += '</div>';
+            return html;
+        }
+
+        function renderDesigns() {
+            let html = '<button class="back-button" onclick="showArtisans(\'' + selectedCategory.id + '\', \'' + selectedItem.id + '\')">← Back to Artisans</button>';
+            html += `
+                <div class="artisan-bio">
+                    <h2>${selectedArtisan.name}</h2>
+                    <p class="location">${selectedArtisan.location}</p>
+                    <p>${selectedArtisan.bio}</p>
+                </div>
+            `;
+            html += '<div class="design-grid">';
+            selectedArtisan.designs.forEach(design => {
+                html += `
+                    <div class="design-card">
+                        <img src="${design.image}" alt="${design.name}" class="design-image">
+                        <div class="design-info">
+                            <div class="design-name">${design.name}</div>
+                            <div class="design-price">${design.price}</div>
+                        </div>
+                    </div>
+                `;
+            });
+            html += '</div>';
+            return html;
+        }
+
+        function showCategories() {
+            currentView = 'categories';
+            selectedCategory = null;
+            selectedItem = null;
+            selectedArtisan = null;
+            render();
+        }
+
+        function showItems(categoryId) {
+            selectedCategory = data.categories.find(c => c.id === categoryId);
+            selectedItem = null;
+            selectedArtisan = null;
+            currentView = 'items';
+            render();
+        }
+
+        function showArtisans(categoryId, itemId) {
+            selectedCategory = data.categories.find(c => c.id === categoryId);
+            selectedItem = selectedCategory.items.find(i => i.id === itemId);
+            selectedArtisan = null;
+            currentView = 'artisans';
+            render();
+        }
+
+        function showDesigns(artisanId) {
+            const key = `${selectedCategory.id}-${selectedItem.id}`;
+            const artisans = data.artisans[key] || [];
+            selectedArtisan = artisans.find(a => a.id === artisanId);
+            currentView = 'designs';
+            render();
+        }
+
+        // Initial render
+        render();
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artisan Connect</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <h1>Artisan Connect 🤝</h1>
+        <p>Discover handcrafted goods and the stories behind them.</p>
+    </header>
+
+    <main>
+        <section id="categories-view" class="view active">
+            <h2>Our Categories</h2>
+            <div id="categories-container" class="container">
+                </div>
+        </section>
+
+        <section id="items-view" class="view">
+            <button class="back-btn" data-target="categories-view">← Back to Categories</button>
+            <h2 id="items-title"></h2>
+            <div id="items-container" class="container">
+                </div>
+        </section>
+
+        <section id="artisans-view" class="view">
+            <button class="back-btn" data-target="items-view">← Back to Items</button>
+            <h2 id="artisans-title"></h2>
+            <div id="artisans-container" class="container">
+                </div>
+        </section>
+
+        <section id="designs-view" class="view">
+            <button class="back-btn" data-target="artisans-view">← Back to Artisans</button>
+            <h2 id="designs-title"></h2>
+            <p id="artisan-bio"></p>
+            <div id="designs-container" class="container">
+                </div>
+        </section>
+    </main>
+
+</body>
+</html>
