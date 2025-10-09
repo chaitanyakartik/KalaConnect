@@ -1,5 +1,4 @@
 // src/data/db.js
-
 export const categories = [
   {
     id: 'pottery',
@@ -7,10 +6,10 @@ export const categories = [
     description: 'Clay creations, shaped by hand and fired with passion.',
     image: '/images/Pottery Img.jpeg', // We will place images in public/assets/
     items: [
-      { id: 'pots', name: 'Pots' },
-      { id: 'decoration', name: 'Decoration Items' },
-      { id: 'kitchen-utensils', name: 'Kitchen Utensils' },
-      { id: 'toys', name: 'Toys' },
+      { id: 'pots', name: 'Pots', image: '/images/Pottery/pots.jpg' },
+      { id: 'decoration', name: 'Decoration Items', image: '/images/Pottery/decoration.jpg' },
+      { id: 'kitchen-utensils', name: 'Kitchen Utensils', image: '/images/Pottery/utensils.jpg' },
+      { id: 'toys', name: 'Toys', image: '/images/Pottery/toys.jpg' },
     ],
   },
   {
@@ -19,9 +18,9 @@ export const categories = [
     description: 'Essential gear, handcrafted for the dedicated angler.',
     image: '/images/Fishing Img.jpeg', // We will place images in public/assets/
     items: [
-      { id: 'fishnets', name: 'Fishnets' },
-      { id: 'boats', name: 'Boats' },
-      { id: 'equipment', name: 'Fishing Equipment' },
+      { id: 'fishnets', name: 'Fishnets', image: '/images/Fishing/fishnets.jpg' },
+      { id: 'boats', name: 'Boats', image: '/images/Fishing/boats.jpg' },
+      { id: 'equipment', name: 'Fishing Equipment', image: '/images/Fishing/equipment.jpg' },
     ],
   },
   {
@@ -30,21 +29,22 @@ export const categories = [
     description: 'Weaving culture and tradition into everyday art.',
     image: '/images/Crafts Img.jpeg', // We will place images in public/assets/
     items: [
-      { id: 'wooden-toys', name: 'Wooden Toys' },
-      { id: 'saris', name: 'Saris' },
-      { id: 'slippers', name: 'Slippers' },
+      { id: 'wooden-toys', name: 'Wooden Toys', image: '/images/Handicrafts/wooden-toys.jpg' },
+      { id: 'saris', name: 'Saris', image: '/images/Handicrafts/saris.jpg' },
+      { id: 'slippers', name: 'Slippers', image: '/images/Handicrafts/slippers.jpg'},
     ],
     },
     {
-        id: 'textiles',
-        name: 'Textiles',
-        description: 'Vibrant fabrics and intricate designs from skilled weavers.',
-        image: '/images/Textiles Img.jpg', // We will place images in public/assets/
-        items: [
-          { id: 'fabrics', name: 'Fabrics' },
-          { id: 'scarves', name: 'Scarves' },
-          { id: 'home-decor', name: 'Home Decor' },
-        ],
+      id: 'textiles',
+      name: 'Textiles',
+      description: 'Vibrant fabrics and intricate designs from skilled weavers.',
+      image: '/images/Textiles Img.jpg', // We will place images in public/assets/
+      items: [
+        { id: 'fabrics', name: 'Fabrics', image: '/images/Textiles/fabrics.jpg' },
+        { id: 'saris', name: 'Saris', image: '/images/Textiles/saris.jpg' },
+        { id: 'scarves', name: 'Scarves', image: '/images/Textiles/scarves.jpg' },
+        { id: 'home-decor', name: 'Home Decor', image: '/images/Textiles/home-decor.jpg' },
+      ],
   }
 ];
 

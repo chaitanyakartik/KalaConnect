@@ -1,0 +1,75 @@
+/* Hero/Header section */
+.categoryHeader {
+  height: 45vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  margin-bottom: 3rem;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.categoryHeader::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.45);
+}
+
+.headerContent {
+  position: relative;
+  z-index: 1;
+}
+
+/* Card grid layout (3 per row) */
+.cardGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.cardLink {
+  text-decoration: none;
+  width: 30%; /* ~3 per row */
+}
+
+.card {
+  height: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.cardImage {
+  height: 220px;
+  object-fit: cover;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .cardLink {
+    width: 45%; /* 2 per row */
+  }
+}
+
+@media (max-width: 600px) {
+  .cardLink {
+    width: 100%; /* 1 per row */
+  }
+}
