@@ -1,0 +1,318 @@
+/* src/pages/HomePage.module.css */
+
+/* keep consistent box-sizing */
+:global(*) {
+  box-sizing: border-box;
+}
+
+/* ----- layout inner container used everywhere to align content ----- */
+.containerInner {
+  width: 100%;
+  max-width: 1200px; /* single source of truth for horizontal alignment */
+  margin: 0 auto;
+  padding: 0 24px; /* consistent left/right padding across the site */
+}
+
+/* HERO */
+.hero {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  min-height: 72vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  animation: gradientShift 12s ease-in-out infinite alternate;
+  padding: 48px 0; /* ensures consistent space above/below hero */
+}
+
+@keyframes gradientShift {
+  0% {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+  }
+  100% {
+    background: linear-gradient(135deg, #ff6a00, #ee0979);
+  }
+}
+
+.heroContent {
+  width: 100%;
+  text-align: center;
+  /* center and limit width to match .containerInner logic */
+  margin: 0 auto;
+}
+
+/* RESPONSIVE, fluid text sizing so the heading won't overflow or appear misaligned */
+.heroTitle {
+  font-weight: 800 !important;
+  margin-bottom: 1rem !important;
+  /* responsive font size */
+  font-size: clamp(2rem, 5.2vw, 3.6rem) !important;
+  line-height: 1.02 !important;
+  background: linear-gradient(to right, #fff, #e0f7fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+.ctaButton {
+  background: white !important;
+  color: #2575fc !important;
+  border-radius: 50px !important;
+  padding: 10px 28px !important;
+  font-weight: 600 !important;
+  text-transform: none !important;
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.18) !important;
+}
+
+.ctaButtonSecondary {
+  border: 2px solid rgba(255, 255, 255, 0.22) !important;
+  color: white !important;
+  border-radius: 50px !important;
+  padding: 10px 28px !important;
+  font-weight: 600 !important;
+  text-transform: none !important;
+}
+
+/* SECTION HEADER */
+.sectionHeader {
+  text-align: center;
+  margin: 0 auto 2.5rem;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.sectionLabel {
+  color: #2575fc;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
+}
+
+.sectionTitle {
+  font-weight: 800 !important;
+  font-size: clamp(1.6rem, 3.6vw, 2.4rem) !important;
+  background: linear-gradient(135deg, #2575fc, #6a11cb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.5rem;
+}
+
+.sectionSubtitle {
+  color: #555;
+  max-width: 720px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+  margin-left: 150px !important;
+}
+
+/* MISSION CARDS */
+.missionCard {
+  border-radius: 14px !important;
+  padding: 1.8rem 1.25rem !important;
+  text-align: center;
+  background: white !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06) !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+  height: 100%; /* This was already correct */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.missionCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(37, 117, 252, 0.14) !important;
+}
+
+.iconWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+
+
+
+/* ...existing code... */
+
+.heroSubtitle {
+  font-weight: 400 !important;
+  opacity: 0.95;
+  margin: 0 auto;
+  max-width: 760px;
+  margin-left: 200px !important;
+  font-size: clamp(0.95rem, 1.6vw, 1.15rem) !important;
+  margin-bottom: 1.5rem !important;
+}
+
+.heroDescription {
+  max-width: 800px !important;
+  margin: 1.5rem auto 2rem !important;
+  font-size: clamp(0.9rem, 1.4vw, 1.1rem) !important;
+  opacity: 0.9 !important;
+  line-height: 1.6 !important;
+  color: rgba(255, 255, 255, 0.95) !important;
+  text-align: center !important;
+}
+
+.heroCTA {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ...existing code... */
+
+.missionIcon {
+  font-size: 3rem !important;
+  background: linear-gradient(135deg, #2575fc, #6a11cb);
+  max-width: 60px !important;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.missionTitle {
+  font-weight: 700 !important;
+  margin-bottom: 0.5rem !important;
+}
+
+/* ...existing code... */
+
+.missionDescription {
+  color: #666;
+  line-height: 1.6;
+  margin-top: 0.25rem;
+}
+
+/* CATEGORY SECTION */
+.categoriesSection {
+  background: linear-gradient(180deg, #fafafa 0%, #fff 100%);
+  padding-bottom: 56px;
+}
+
+/* ...existing code... */
+
+.categoryCardLink {
+  text-decoration: none;
+  display: block;
+  height: 100%;
+  width: 100% !important; /* Force full width */
+  max-width: 100% !important; /* Prevent overflow */
+}
+
+.categoryCard {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100% !important; /* Force full width */
+  max-width: 100% !important; /* Prevent overflow */
+  border-radius: 16px !important;
+  overflow: hidden !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08) !important;
+  transition: transform 0.35s ease, box-shadow 0.35s ease !important;
+}
+
+/* ...existing code... */
+
+.categoryCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 48px rgba(37, 117, 252, 0.18) !important;
+}
+
+/* ...existing code... */
+/* ...existing code... */
+
+.categoryImageWrapper {
+  width: 100%;
+  height: 250px !important; /* Increased and forced height */
+  overflow: hidden !important;
+  display: block !important;
+  position: relative !important;
+}
+
+.categoryImage {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important; /* This crops the image to fit */
+  object-position: center !important; /* Centers the cropped area */
+  transition: transform 0.5s ease !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+}
+
+/* ...existing code... */
+
+/* ...existing code... */
+
+.categoryCard:hover .categoryImage {
+  transform: scale(1.06);
+}
+
+.categoryContent {
+  flex: 1;
+  padding: 28px !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.categoryTitle {
+  font-weight: 700 !important;
+  color: #111;
+  margin-bottom: 0.5rem !important;
+  font-size: 1.25rem;
+}
+
+.categoryDescription {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.categoryArrow {
+  display: inline-flex;
+  align-items: center;
+  color: #2575fc;
+  opacity: 0;
+  transition: all 0.25s ease;
+  margin-top: 8px;
+  font-weight: 600; /* Make the 'View' text bold */
+}
+
+.categoryCard:hover .categoryArrow {
+  opacity: 1;
+  transform: translateX(6px);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .categoryCard {
+    flex-direction: column;
+    height: auto; /* this remains auto for stacked mobile view */
+  }
+
+  .categoryImageWrapper {
+    height: 220px;
+    width: 100%; /* Ensure image wrapper takes full width on mobile */
+  }
+
+  .categoryContent {
+    padding: 24px !important;
+  }
+
+  .hero {
+    min-height: 56vh;
+    padding: 36px 0;
+  }
+
+  .heroTitle {
+    font-size: clamp(1.6rem, 8vw, 2.6rem) !important;
+  }
+}

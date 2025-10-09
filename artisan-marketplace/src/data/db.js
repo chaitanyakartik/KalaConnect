@@ -5,7 +5,7 @@ export const categories = [
     id: 'pottery',
     name: 'Pottery',
     description: 'Clay creations, shaped by hand and fired with passion.',
-    image: '/assets/pottery.jpg', // We will place images in public/assets/
+    image: '/images/Pottery Img.jpeg', // We will place images in public/assets/
     items: [
       { id: 'pots', name: 'Pots' },
       { id: 'decoration', name: 'Decoration Items' },
@@ -17,7 +17,7 @@ export const categories = [
     id: 'fishing',
     name: 'Fishing',
     description: 'Essential gear, handcrafted for the dedicated angler.',
-    image: '/assets/fishing.jpg',
+    image: '/images/Fishing Img.jpeg', // We will place images in public/assets/
     items: [
       { id: 'fishnets', name: 'Fishnets' },
       { id: 'boats', name: 'Boats' },
@@ -28,13 +28,24 @@ export const categories = [
     id: 'handicrafts',
     name: 'Handicrafts',
     description: 'Weaving culture and tradition into everyday art.',
-    image: '/assets/handicrafts.jpg',
+    image: '/images/Crafts Img.jpeg', // We will place images in public/assets/
     items: [
       { id: 'wooden-toys', name: 'Wooden Toys' },
       { id: 'saris', name: 'Saris' },
       { id: 'slippers', name: 'Slippers' },
     ],
-  },
+    },
+    {
+        id: 'textiles',
+        name: 'Textiles',
+        description: 'Vibrant fabrics and intricate designs from skilled weavers.',
+        image: '/images/Textiles Img.jpg', // We will place images in public/assets/
+        items: [
+          { id: 'fabrics', name: 'Fabrics' },
+          { id: 'scarves', name: 'Scarves' },
+          { id: 'home-decor', name: 'Home Decor' },
+        ],
+  }
 ];
 
 export const artisans = [
