@@ -81,5 +81,22 @@ export const artisans = [
         bio: 'Creating vibrant silk sarees with intricate designs.',
         crafts: [{ itemId: 'saris', estimatedPrice: '₹5000 - ₹20000' }],
         
-  }
+  },
+  {// adding more artisans for pottery stuff
+    id: 5,
+    name: 'Anil Mehta',
+    origin: 'Kutch, Gujarat',
+    bio: 'Specializes in traditional Kutch pottery with modern twists.',
+    crafts: [
+      { itemId: 'pots', estimatedPrice: '₹1000 - ₹3000' },
+      { itemId: 'kitchen-utensils', estimatedPrice: '₹800 - ₹2000' },
+    ],
+  },
+  {
+    id: 6,
+    name: 'Radha Iyer',
+    origin: 'Chennai, Tamil Nadu',
+    bio: 'Expert in making decorative ceramic items and vases.',
+    crafts: [{ itemId: 'decoration', estimatedPrice: '₹1500 - ₹4000' }],
+    }
 ];
