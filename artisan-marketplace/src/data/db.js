@@ -100,3 +100,6 @@ export const artisans = [
     crafts: [{ itemId: 'decoration', estimatedPrice: '₹1500 - ₹4000' }],
     }
 ];
+
+// Provide a default export for consumers that import `db` as a default
+export default { categories, artisans };

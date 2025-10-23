@@ -25,9 +25,9 @@ Purpose: Ensure the repository has the feature structure, linting, formatting, a
 Purpose: Core changes required before implementing user stories (routing, shared components, data access).
 
 - [ ] T006 Create or verify a central router entry in `src/App.jsx` that supports dynamic route `/artisan/:artisanId` (file: `src/App.jsx`)
-- [ ] T007 Ensure `src/data/db.js` exports artisan data and shape used by the page (file: `src/data/db.js`)
-- [ ] T008 Create `src/pages/ArtisanProfilePage.jsx` component scaffold (file: `src/pages/ArtisanProfilePage.jsx`)
-- [P] T009 [P] Create or update `src/components/ArtisanCard.jsx` to link to `/artisan/:artisanId` for the 'View Designs' action (file: `src/components/ArtisanCard.jsx`)
+- [X] T007 Ensure `src/data/db.js` exports artisan data and shape used by the page (file: `src/data/db.js`)
+- [X] T008 Create `src/pages/ArtisanProfilePage.jsx` component scaffold (file: `src/pages/ArtisanProfilePage.jsx`)
+- [X] T009 [P] Create or update `src/components/ArtisanCard.jsx` to link to `/artisan/:artisanId` for the 'View Designs' action (file: `src/components/ArtisanCard.jsx`)
 - [ ] T010 Add shared UI helpers and styles used across pages (file: `src/App.css`, `src/index.css`)
 
 ---
