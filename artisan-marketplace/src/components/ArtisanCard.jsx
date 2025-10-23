@@ -1,6 +1,7 @@
 // src/components/ArtisanCard.jsx
 import React from 'react';
 import { Card, CardContent, Typography, Button } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 function ArtisanCard({ artisan, estimatedPrice }) {
   return (
@@ -18,9 +19,11 @@ function ArtisanCard({ artisan, estimatedPrice }) {
         <Typography variant="h6" color="primary">
           Est. Price: {estimatedPrice}
         </Typography>
-        <Button size="small" variant="contained" sx={{ mt: 1 }}>
-          View Designs
-        </Button>
+        <Link to={`/artisan/${artisan.id}`} style={{ textDecoration: 'none' }}>
+          <Button size="small" variant="contained" sx={{ mt: 1 }}>
+            View Designs
+          </Button>
+        </Link>
       </CardContent>
     </Card>
   );
