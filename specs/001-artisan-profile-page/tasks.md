@@ -45,6 +45,11 @@ Independent Test: Load `/artisan/1` (or a valid ID from `src/data/db.js`) and ve
 - [P] T013 [P] Add a reusable `src/components/ProfileHeader.jsx` if needed and wire it into the page (file: `src/components/ProfileHeader.jsx`)
 - [ ] T014 [US1] Implement graceful error handling and a user-friendly empty/error state (file: `src/pages/ArtisanProfilePage.jsx`)
 - [ ] T015 [US1] Add basic accessibility attributes (alt text, aria labels) to profile elements (file: `src/pages/ArtisanProfilePage.jsx`)
+ - [X] T011 [US1] Implement profile data fetching logic inside `src/pages/ArtisanProfilePage.jsx` (file: `src/pages/ArtisanProfilePage.jsx`)
+ - [X] T012 [US1] Render profile header including profile picture, name, origin, and bio using Material-UI components (file: `src/pages/ArtisanProfilePage.jsx`)
+ - [X] T013 [P] Add a reusable `src/components/ProfileHeader.jsx` if needed and wire it into the page (file: `src/components/ProfileHeader.jsx`)
+ - [X] T014 [US1] Implement graceful error handling and a user-friendly empty/error state (file: `src/pages/ArtisanProfilePage.jsx`)
+ - [X] T015 [US1] Add basic accessibility attributes (alt text, aria labels) to profile elements (file: `src/pages/ArtisanProfilePage.jsx`)
 
 ---
 

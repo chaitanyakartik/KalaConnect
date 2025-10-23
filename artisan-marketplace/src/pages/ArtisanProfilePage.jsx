@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Container, Grid, Typography, Card, CardMedia, CardContent, Box } from '@mui/material';
 import db from '../data/db';
+import ProfileHeader from '../components/ProfileHeader';
 
 const ArtisanProfilePage = () => {
   const { artisanId } = useParams();
@@ -9,7 +10,16 @@ const ArtisanProfilePage = () => {
   const artisan = db.artisans.find((a) => String(a.id) === String(artisanId));
 
   if (!artisan) {
-    return <Typography variant="h4">Artisan not found</Typography>;
+    return (
+      <Container sx={{ py: 6 }}>
+        <Typography variant="h4" role="alert">
+          Artisan not found
+        </Typography>
+        <Typography variant="body1" sx={{ mt: 2 }}>
+          The artisan you are looking for does not exist or may have been removed.
+        </Typography>
+      </Container>
+    );
   }
 
   // Map crafts (which include itemId and estimatedPrice) to full item objects
@@ -25,35 +35,18 @@ const ArtisanProfilePage = () => {
 
   return (
     <Container sx={{ py: 4 }}>
-      <Grid container spacing={4} alignItems="center">
-        <Grid item xs={12} md={4}>
-          {artisan.profilePicture && (
-            <Box
-              component="img"
-              src={artisan.profilePicture}
-              alt={`${artisan.name}'s profile`}
-              sx={{
-                width: '100%',
-                borderRadius: '50%',
-                objectFit: 'cover',
-              }}
-            />
-          )}
-        </Grid>
-        <Grid item xs={12} md={8}>
-          <Typography variant="h2" component="h1">
-            {artisan.name}
-          </Typography>
-          <Typography variant="h5" color="text.secondary">
-            From: {artisan.origin}
-          </Typography>
-          <Typography variant="body1" sx={{ mt: 2 }}>
-            {artisan.bio}
-          </Typography>
+      <Grid container spacing={4}>
+        <Grid item xs={12}>
+          <ProfileHeader
+            name={artisan.name}
+            origin={artisan.origin}
+            bio={artisan.bio}
+            profilePicture={artisan.profilePicture}
+          />
         </Grid>
       </Grid>
 
-      <Typography variant="h3" sx={{ mt: 6, mb: 3 }}>
+      <Typography variant="h3" sx={{ mt: 6, mb: 3 }} id="gallery-heading">
         All Designs by {artisan.name}
       </Typography>
 
