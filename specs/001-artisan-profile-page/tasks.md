@@ -66,6 +66,11 @@ Independent Test: On a valid artisan page, verify the gallery displays the artis
 - [P] T018 [P] Create or reuse `src/components/DesignCard.jsx` for gallery items and ensure it receives correct props (file: `src/components/DesignCard.jsx`)
 - [ ] T019 [US2] Add responsive styles to the gallery (file: `src/pages/ArtisanProfilePage.module.css` or `src/pages/ArtisanProfilePage.jsx` CSS-in-JS)
 - [ ] T020 [US2] Add keyboard navigation support for gallery items and accessibility attributes (file: `src/pages/ArtisanProfilePage.jsx`)
+ - [X] T016 [US2] Implement gallery layout in `src/pages/ArtisanProfilePage.jsx` using Material-UI Grid/List components (file: `src/pages/ArtisanProfilePage.jsx`)
+ - [X] T017 [US2] Ensure each gallery item links to its item page (file: `src/pages/ArtisanProfilePage.jsx` and `src/components/ArtisanCard.jsx`)
+ - [X] T018 [P] Create or reuse `src/components/DesignCard.jsx` for gallery items and ensure it receives correct props (file: `src/components/DesignCard.jsx`)
+ - [X] T019 [US2] Add responsive styles to the gallery (file: `src/pages/ArtisanProfilePage.module.css` or `src/pages/ArtisanProfilePage.jsx` CSS-in-JS)
+ - [X] T020 [US2] Add keyboard navigation support for gallery items and accessibility attributes (file: `src/pages/ArtisanProfilePage.jsx`)
 
 ---
 

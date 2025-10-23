@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { Container, Grid, Typography, Card, CardMedia, CardContent, Box } from '@mui/material';
 import db from '../data/db';
 import ProfileHeader from '../components/ProfileHeader';
+import DesignCard from '../components/DesignCard';
 
 const ArtisanProfilePage = () => {
   const { artisanId } = useParams();
@@ -50,29 +51,10 @@ const ArtisanProfilePage = () => {
         All Designs by {artisan.name}
       </Typography>
 
-      <Grid container spacing={3}>
+      <Grid container spacing={3} aria-labelledby="gallery-heading">
         {designs.map((design) => (
           <Grid item xs={12} sm={6} md={4} key={design.id}>
-            <Link to={`/item/${design.id}`} style={{ textDecoration: 'none' }}>
-              <Card>
-                <CardMedia
-                  component="img"
-                  image={design.image}
-                  alt={design.name}
-                  sx={{ height: 150, objectFit: 'cover' }}
-                />
-                <CardContent>
-                  <Typography variant="h6" align="center">
-                    {design.name}
-                  </Typography>
-                  {design.estimatedPrice && (
-                    <Typography variant="body2" color="text.secondary" align="center">
-                      Est. Price: {design.estimatedPrice}
-                    </Typography>
-                  )}
-                </CardContent>
-              </Card>
-            </Link>
+            <DesignCard design={design} />
           </Grid>
         ))}
       </Grid>
