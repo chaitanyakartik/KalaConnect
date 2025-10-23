@@ -150,7 +150,7 @@ Examples of foundational tasks (adjust based on your project):
 
 **Purpose**: Improvements that affect multiple user stories
 
-- [ ] TXXX [P] Documentation updates in docs/
+- [ ] TXXX [P] Documentation
 - [ ] TXXX Code cleanup and refactoring
 - [ ] TXXX Performance optimization across all stories
 - [ ] TXXX [P] Additional unit tests (if requested) in tests/unit/
@@ -237,6 +237,15 @@ With multiple developers:
    - Developer B: User Story 2
    - Developer C: User Story 3
 3. Stories complete and integrate independently
+
+
+## Phase Dependencies
+
+- **Setup (Phase 1)**: No dependencies - can start immediately.
+- **Foundational (Phase 2)**: Blocks all user stories until complete.
+- **User Stories (Phase 3+)**: Depend on Foundational phase completion.
+  - Can proceed in parallel or sequentially based on priority.
+- **Polish (Final Phase)**: Requires all user stories to be complete.
 
 ---
 

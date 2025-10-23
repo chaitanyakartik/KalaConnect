@@ -82,6 +82,7 @@ Purpose: Final improvements, docs, and cross-story tasks.
 - [ ] T022 Update documentation `specs/001-artisan-profile-page/quickstart.md` with any new commands and verification steps (file: `specs/001-artisan-profile-page/quickstart.md`)
 - [P] T023 [P] Run formatter and linter fixes across modified files (files: `src/pages/ArtisanProfilePage.jsx`, `src/components/*`, `src/App.jsx`)
 - [ ] T024 Verify performance goal (page load within 2s for common case) using a local Lighthouse or simple timing check and document results (file: `specs/001-artisan-profile-page/research.md`)
+- [X] T025 Add Top NavBar and include it in `artisan-marketplace/src/App.jsx` (file: `artisan-marketplace/src/components/NavBar.jsx`, `artisan-marketplace/src/App.jsx`) — enhanced: sticky, category dropdown, adjusted color
 
 ---
 

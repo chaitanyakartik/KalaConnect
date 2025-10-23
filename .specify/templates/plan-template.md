@@ -31,6 +31,11 @@
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
+- **Code Quality**: Ensure all tasks include linting and formatting steps.
+- **Testing Standards**: Verify that test cases are defined for each user story.
+- **UX Consistency**: Confirm that the design aligns with Material-UI components and accessibility guidelines.
+- **Performance Requirements**: Ensure performance goals are defined and measurable.
+
 [Gates determined based on constitution file]
 
 ## Project Structure
