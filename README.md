@@ -55,7 +55,7 @@ You need to have Node.js and npm (or yarn) installed on your machine.
 
 1.  **Clone the repository:**
     ```sh
-    git clone [https://github.com/your-username/artisan-marketplace.git](https://github.com/your-username/artisan-marketplace.git)
+    git clone https://github.com/chaitanyakartik/KalaConnect
     ```
 2.  **Navigate to the project directory:**
     ```sh
