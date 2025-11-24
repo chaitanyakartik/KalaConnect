@@ -18,9 +18,9 @@ export const categories = [
     description: 'Essential gear, handcrafted for the dedicated angler.',
     image: '/images/Fishing Img.jpeg', // We will place images in public/assets/
     items: [
-      { id: 'fishnets', name: 'Fishnets', image: '/images/Fishing/fishnets.jpg' },
-      { id: 'boats', name: 'Boats', image: '/images/Fishing/boats.jpg' },
-      { id: 'equipment', name: 'Fishing Equipment', image: '/images/Fishing/equipment.jpg' },
+      { id: 'fishnets', name: 'Fishnets', image: '/images/Fishing/fishnets.jpeg' },
+      { id: 'boats', name: 'Boats', image: '/images/Fishing/boats.jpeg' },
+      { id: 'equipment', name: 'Fishing Equipment', image: '/images/Fishing/equipment.jpeg' },
     ],
   },
   {
@@ -30,8 +30,8 @@ export const categories = [
     image: '/images/Crafts Img.jpeg', // We will place images in public/assets/
     items: [
       { id: 'wooden-toys', name: 'Wooden Toys', image: '/images/Handicrafts/wooden-toys.jpg' },
-      { id: 'saris', name: 'Saris', image: '/images/Handicrafts/saris.jpg' },
-      { id: 'slippers', name: 'Slippers', image: '/images/Handicrafts/slippers.jpg'},
+      { id: 'saris', name: 'Saris', image: '/images/Handicrafts/saris.jpeg' },
+      { id: 'slippers', name: 'Slippers', image: '/images/Handicrafts/slippers.jpeg'},
     ],
     },
     {
@@ -40,10 +40,10 @@ export const categories = [
       description: 'Vibrant fabrics and intricate designs from skilled weavers.',
       image: '/images/Textiles Img.jpg', // We will place images in public/assets/
       items: [
-        { id: 'fabrics', name: 'Fabrics', image: '/images/Textiles/fabrics.jpg' },
-        { id: 'saris', name: 'Saris', image: '/images/Textiles/saris.jpg' },
-        { id: 'scarves', name: 'Scarves', image: '/images/Textiles/scarves.jpg' },
-        { id: 'home-decor', name: 'Home Decor', image: '/images/Textiles/home-decor.jpg' },
+        // { id: 'fabrics', name: 'Fabrics', image: '/images/Textiles/fabrics.jpeg' },
+        { id: 'saris', name: 'Saris', image: '/images/Textiles/saris.jpeg' },
+        { id: 'scarves', name: 'Scarves', image: '/images/Textiles/scarves.jpeg' },
+        { id: 'home-decor', name: 'Home Decor', image: '/images/Textiles/home-dcor.jpeg' },
       ],
   }
 ];
